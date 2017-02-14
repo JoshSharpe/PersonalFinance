@@ -1,0 +1,46 @@
+{
+  "name": "banking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
+  },
+  "dependencies": {
+    "babel-loader": "^6.2.10",
+    "body-parser": "1.16.0",
+    "express": "4.14.1",
+    "graceful-fs": "4.1.11"
+  },
+  "scripts": {
+    "start": "node ./dist/server.js",
+    "build": "npm run clean-dist && npm run client && npm run server",
+    "clean-dist": "rimraf dist",
+    "server": "babel server.js --out-file=dist/server.js",
+    "client": "webpack --config ./webpack.config.js --progress --profile --colors",
+    "dev": "echo \"This command has been deprecated. Use 'npm start'\" && exit 1"
+  },
+  "devDependencies": {
+    "babel-cli": "6.22.0",
+    "babel-core": "6.22.1",
+    "babel-preset-es2015": "6.14.0",
+    "babel-preset-react": "6.22.0",
+    "babel-preset-stage-0": "6.5.0",
+    "electron-packager": "8.5.1 ",
+    "electron": "1.4.1",
+    "html-webpack-plugin": "2.26.0",
+    "webpack": "1.14.0",
+    "rimraf": "2.5.4",
+    "style-loader": "^0.13.1",
+    "react": "^15.4.2",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^15.4.2",
+    "css-loader": "^0.26.1"
+  }
+}
